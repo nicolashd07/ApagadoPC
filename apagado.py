@@ -1,12 +1,10 @@
-# Importar el módulo `telegram` y el módulo `os`
-#python-telegram-bot
-
 import telegram 
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import os
-
+from config import TOKEN
 # Crear una instancia del bot de Telegram
-bot = telegram.Bot(token="")
+
+bot = telegram.Bot(token=TOKEN)
 
 
 def start(update, context):
