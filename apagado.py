@@ -1,7 +1,7 @@
 import telegram 
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import os
-from config import TOKEN
+from config import TOKEN, User_acceso
 # Crear una instancia del bot de Telegram
 
 bot = telegram.Bot(token=TOKEN)
@@ -11,7 +11,7 @@ def start(update, context):
   
   chat_id = update.effective_chat.id
 
-  if chat_id ==462212154:
+  if chat_id in User_acceso:
     bot.send_message(chat_id=chat_id, text="Usted cuenta con permisos para apagar y/o cancelar_apagado del sistema.")
   
   else:
@@ -23,7 +23,7 @@ def apagar(update, context):
  
   # Obtener el identificador del chat
   chat_id = update.effective_chat.id
-  if chat_id == 462212154:
+  if chat_id in User_acceso:
     #comando para apagar eequipo en 30s y guardarlo en la variable result
     result= os.system("shutdown -s -t 30")
 
@@ -47,7 +47,7 @@ def cancelar(update, context):
   #obtener el identificador de chat
   chat_id = update.effective_chat.id
 
-  if chat_id ==462212154:
+  if chat_id in User_acceso:
     # Cancelar el apagado del sistema
     result = os.system("shutdown -a")
     
