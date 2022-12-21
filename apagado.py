@@ -56,8 +56,8 @@ def cancelar(update, context):
       bot.send_message(chat_id=chat_id, text='se ha cancelado el apagado del sistema.')
 
     elif result ==1116:
-       bot.send_message(chat_id=chat_id, text='No se puede anular el apagado del sistema porque no se estaba apagando.')
-      
+      bot.send_message(chat_id=chat_id, text='No se puede anular el apagado del sistema porque no se estaba apagando.')
+      print('No se puede anular el apagado del sistema porque no se estaba apagando.')
     else: 
       bot.send_message(chat_id=chat_id, text=f'Favor de revisar en el log, codigo no reconocido ({result}.)')
 
